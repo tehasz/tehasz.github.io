@@ -2,13 +2,24 @@ var $ = function (id) { return document.getElementById(id); };
 
 var volunteerArray = [];
 
-var displayVolunteers = function () {   
+var displayVolunteers = function () {
     // display the volunteers in the text area
-    $("volunteerList").value = volunteerArray.join("\n");
+    // $("volunteerList").value = volunteerArray.join("\n");
 
-	// comment out the line above change this to a loop instead to loop through the array.
-	
-	
+    // comment out the line above change this to a loop instead to loop through the array.
+
+    var volunteerOut = [];
+
+    for (i = 0; i < volunteerArray.length; i++) {
+
+
+        volunteerOut.push((i + 1).toString() + " - " + volunteerArray[i]);
+
+    }
+
+    $("volunteerList").value = volunteerOut.join("\n");
+
+
 };
 
 var addVolunteer = function () {
@@ -31,13 +42,19 @@ var addVolunteer = function () {
 var deleteVolunteer = function () {
     // get the data from the form (hint: use the same format as from the add).
 
+    var deleteName = $("first_name").value + " " + $("last_name").value;
+
     // remove the string from the array (hint, loop through the entire list, compare the string with the item in the array.
-	
-   
-	 
+    for (i = 0; i < volunteerArray.length; i++) {
+        if (volunteerArray[i] == deleteName) {
+            volunteerArray.splice(i, 1);
+        }
+    }
+
+
     // display the volunteers and clear the add form
     displayVolunteers();
-    
+
     // get the delete form ready for next entry
     $("first_name").value = "";
     $("last_name").value = "";
