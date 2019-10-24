@@ -3,27 +3,32 @@ window.onload = rotate;
 
 // variable declaration
 var theCount = 0;
+var banner1 = new Image();
+var banner2 = new Image();
+var banner3 = new Image();
 
-var banner1 = newImage();
-var banner2 = newImage();
-var banner3 = newImage();
-
-banner1.src = '/images/banner1.jpg';
-banner2.src = '/images/banner2.jpg';
-banner3.src = '/images/banner3.jpg';
+banner1.src = "images/banner1.jpg";
+banner2.src = "images/banner2.jpg";
+banner3.src = "images/banner3.jpg";
 
 var banner = [];
 banner.push(banner1);
 banner.push(banner2);
 banner.push(banner3);
 
+
+
+//banner.push("images/banner1.jpg");
+//banner.push("images/banner2.jpg");
+//banner.push("images/banner3.jpg");
+
 // function to rotate banner images
 function rotate() {
     theCount++;
-    if (theCount === banner.length){
+    if (theCount == banner.length){
         theCount = 0;
     }
-    document.getElementById("exBanner").src = banner[theCount];
+    document.getElementById("rotation").src = banner[theCount];
 
     setTimeout(rotate, 3 * 1000);
 }
