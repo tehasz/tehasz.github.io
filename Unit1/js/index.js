@@ -23,12 +23,16 @@ banner.push(banner3);
 //banner.push("images/banner3.jpg");
 
 // function to rotate banner images
-function rotate() {
+function rotate(oldChild) {
     theCount++;
     if (theCount == banner.length){
         theCount = 0;
+
     }
-    document.getElementById("rotation").src = banner[theCount];
+    document.getElementById("rotation").innerHTML = "";
+
+
+    document.getElementById("rotation").appendChild(banner[theCount]);
 
     setTimeout(rotate, 3 * 1000);
 }
