@@ -70,17 +70,17 @@
 </body>
 
 <script type="text/javascript">
-
+// create an variable to preload images
     var imgs = document.images;
-
+// create variable to track length of image array
     var len = imgs.length;
 
     var counter = 0;
-
+// create index to cycle through elements
     var bannerIndex = 0;
 
     function onpageload() {
-
+// on page load load images
         [].forEach.call( imgs, function( img ) {
 
             console.log("Hello");
@@ -94,7 +94,7 @@
     function incrementCounter() {
 
         counter++;
-
+// raise counter and once counter equals array length all images loaded
         if ( counter === len ) {
 
             console.log( 'All images loaded!' );
@@ -118,13 +118,13 @@
         var i;
 
         for (i = 0; i < len; i++) {
-
+// set css to display no images
             imgs[i].style.display = "none";
 
         }
-
+// set image style to block
         imgs[bannerIndex].style.display = "block";
-
+// cycle through elements of the banner
         bannerIndex = (bannerIndex + 1) % len;
 
     }
