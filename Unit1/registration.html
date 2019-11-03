@@ -1,68 +1,585 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
 
 <head>
+
     <title>Invitation Page</title>
+
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+
 </head>
 
+<style>
+
+    body {
+
+        font: 15px arial, sans-serif;
+
+        color: #808080;
+
+    }
+
+    input[type=text],
+
+    select ,input[type=password],radio{
+
+        width: 100%;
+
+        padding: 12px 20px;
+
+        margin: 8px 0;
+
+        display: inline-block;
+
+        border: 1px solid #ccc;
+
+        border-radius: 4px;
+
+        box-sizing: border-box;
+
+    }
+
+    input[type=submit] ,input[type=button]{
+
+        width: 100%;
+
+        background-color: #800D1E;
+
+        color: white;
+
+        padding: 14px 20px;
+
+        margin: 8px 0;
+
+        border: none;
+
+        border-radius: 4px;
+
+        cursor: pointer;
+
+    }
+
+    input[type=submit]:hover ;input[type=button]:hover {
+
+                                  background-color: #802F1E;
+
+                              }
+
+    section {
+
+        border-radius: 5px;
+
+        background-color: #f2f2f2;
+
+        padding: 20px;
+
+    }
+
+    article {
+
+        border-radius: 5px;
+
+        background-color: #CCCCCC;
+
+        padding: 20px;
+
+        color: #222222;
+
+    }
+
+    ul.topnav {
+
+        list-style-type: none;
+
+        margin: 0;
+
+        padding: 0;
+
+        overflow: hidden;
+
+        background-color: #333;
+
+    }
+
+    ul.topnav li {
+
+        float: left;
+
+    }
+
+    ul.topnav li a {
+
+        display: block;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 14px 16px;
+
+        text-decoration: none;
+
+    }
+
+    ul.topnav li a:hover:not(.active) {
+
+        background-color: #111;
+
+    }
+
+    ul.topnav li a.active {
+
+        background-color: #CCCCCC;
+
+        color: #333
+
+    }
+
+    ul.topnav li.right {
+
+        float: right;
+
+    }
+
+    @media screen and (max-width: 600px) {
+
+        ul.topnav li.right,
+
+        ul.topnav li {
+
+            float: none;
+
+        }
+
+    }
+
+    .top {
+
+        position: relative;
+
+        background-color: #ffffff;
+
+        height: 68px;
+
+        padding-top: 20px;
+
+        line-height: 50px;
+
+        overflow: hidden;
+
+        z-index: 2;
+
+    }
+
+    .logo {
+
+        font-family: arial;
+
+        text-decoration: none;
+
+        line-height: 1;
+
+        -webkit-font-smoothing: antialiased;
+
+        -moz-osx-font-smoothing: grayscale;
+
+        font-size: 37px;
+
+        letter-spacing: 3px;
+
+        color: #555555;
+
+        display: block;
+
+        position: absolute;
+
+        top: 17px;
+
+    }
+
+    .logo .dotcom {
+
+        color: #800D1E
+
+    }
+
+    .topnav {
+
+        position: relative;
+
+        z-index: 2;
+
+        font-size: 17px;
+
+        background-color: #5f5f5f;
+
+        color: #f1f1f1;
+
+        width: 100%;
+
+        padding: 0;
+
+        letter-spacing: 1px;
+
+    }
+
+    .top .logo {
+
+        position: relative;
+
+        top: 0;
+
+        width: 100%;
+
+        text-align: left;
+
+        margin: auto
+
+    }
+
+    footer {
+
+        position: absolute;
+
+        right: 0;
+
+        bottom: 0;
+
+        left: 0;
+
+        padding: 1rem;
+
+        background-color: #efefef;
+
+        text-align: center;
+
+    }
+
+    div.gallery {
+
+        margin: 5px;
+
+        border: 1px solid #ccc;
+
+        float: left;
+
+        width: 180px;
+
+    }
+
+    div.gallery:hover {
+
+        border: 1px solid #777;
+
+    }
+
+    div.gallery img {
+
+        width: 100%;
+
+        height: auto;
+
+    }
+
+    div.desc {
+
+        padding: 15px;
+
+        text-align: center;
+
+    }
+
+</style>
+
 <body>
-    <header>
-        <div class="top">
-            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-        </div>
-        <nav>
-            <ul class="topnav">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li><a href="invitation.html">Invitation</a>
-                </li>
-				<li><a href="volunteer.html">Volunteers</a>
-                </li>
-                <li><a href="gallery.html">Gallery</a>
-                </li>
-                <li><a href="registration.html" class="active">Registration</a>
-                </li>
-            </ul>
 
-        </nav>
-    </header>
-    <section id="pageForm">
-        <form action="#">
-            <label for="userName">Username:</label>
-            <input type="text" name="userName" placeholder="Enter your Username" />
+<header>
 
-            <label for="Password">Password:
-            </label>
-            <input type="password" name="password" placeholder="Enter your Password" />
+    <div class="top">
 
-            <label for="passwordVerify">Verify your Password:
-            </label>
-            <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+        <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
 
-            <label for="firstName">First Name:
-            </label>
-            <input type="text" name="firstName" placeholder="Enter your First Name" />
+    </div>
 
-            <label for="hostName">Last Name:
-            </label>
-            <input type="text" name="lastName" placeholder="Enter your Last Name" />
-            <label for="email">Email:
-            </label>
-            <input type="text" name="email" placeholder="Enter your Email Address" />
-			<label for="phoneNumber">Phone Number
-            </label>
-            <input type="text" name="lastName" placeholder="Enter your Phone Number" />
-			<label for="signUpNewsletter">Sign up for newsletter:
-            </label>
-			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
-				<input type="radio" name="signUpNewsletter" value="No"> No
-            <input type="submit" value="Next step">
-        </form>
-    </section>
+    <nav>
 
-    <footer>This events site is for IT3515 tasks.
-    </footer>
+        <ul class="topnav">
+
+            <li><a href="index.html">Home</a>
+
+            </li>
+
+            <li><a href="invitation.html">Invitation</a>
+
+            </li>
+
+            <li><a href="volunteer.html">Volunteers</a>
+
+            </li>
+
+            <li><a href="gallery.html">Gallery</a>
+
+            </li>
+
+            <li><a href="registration.html" class="active">Registration</a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<section id="pageForm">
+
+    <form action="" name="formtype">
+
+        <label for="userName">Username:</label>
+
+        <input id="userName" type="text" name="userName" placeholder="Enter your Username" />
+
+        <label for="Password">Password:
+
+        </label>
+
+        <input id="password" type="password" name="password" placeholder="Enter your Password" />
+
+        <label for="passwordVerify">Verify your Password:
+
+        </label>
+
+        <input id="passwordVerify" type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+
+        <label for="firstName">First Name:
+
+        </label>
+
+        <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" />
+
+        <label for="hostName">Last Name:
+
+        </label>
+
+        <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" />
+
+        <label for="email">Email:
+
+        </label>
+
+        <input type="text" name="email" id="email" placeholder="Enter your Email Address" />
+
+        <label for="phoneNumber">Phone Number
+
+        </label>
+
+        <input type="text" id="phoneNumber" name="lastName" placeholder="Enter your Phone Number" />
+
+        <label for="signUpNewsletter">Sign up for newsletter:
+
+        </label>
+
+        <input type="radio" id="signup1" name="signUpNewsletter" value="Yes" checked> Yes
+
+        <input type="radio" id="signup2" name="signUpNewsletter" value="No"> No
+
+        <input type="submit" onclick="myfunc();" value="Next step">
+
+    </form>
+
+</section>
+
+<footer>This events site is for IT3515 tasks.
+
+</footer>
+
 </body>
+
+<script>
+
+    function myfunc()
+
+    {
+
+        var userName=document.getElementById("userName");
+
+        var password=document.getElementById("password");
+
+        var passwordVerify=document.getElementById("passwordVerify");
+
+        var firstName=document.getElementById("firstName");
+
+        var lastName=document.getElementById("lastName");
+
+        var email=document.getElementById("email");
+
+        var phoneNumber=document.getElementById("phoneNumber");
+
+        var letters = /^[0-9a-zA-Z]+$/;
+
+        var letter1 = /^[a-zA-Z]+$/;
+
+        var valemail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        var digits = /^[0-9]+$/;
+
+        var flag=0;
+
+        if(!userName.value.match(letters))
+
+        {
+
+            flag=1;
+
+            alert("You have entered other than digits and letters in username field");
+
+        }
+
+        else if(password.value.length<8)
+
+        {
+
+            flag=1;
+
+            alert("Password length is less than 8");
+
+        }
+
+        else if(password.value!=passwordVerify.value)
+
+        {
+
+            flag=1;
+
+            alert("Error both passwords do not match");
+
+        }
+
+        else if(!firstName.value.match(letter1))
+
+        {
+
+            flag=1;
+
+            alert("Please enter a valid first name");
+
+        }
+
+        else if(!lastName.value.match(letter1))
+
+        {
+
+            flag=1;
+
+            alert("Please enter a valid last name");
+
+        }
+
+        else if (!email.value.match(valemail))
+
+        {
+
+            flag=1;
+
+            alert("Please enter a valid email");
+
+        }
+
+        else
+
+        {
+
+            if(phoneNumber.value.length!=14)
+
+            {
+
+                flag=1;
+
+                alert("phonenumber not valid");
+
+            }
+
+            if(phoneNumber.value[0]!='('&&flag!=1)
+
+            {
+
+                flag=1;
+
+                alert("phonenumber not valid");
+
+            }
+
+            if(phoneNumber.value[4]!=')'&&flag!=1)
+
+            {
+
+                flag=1;
+
+                alert("phonenumber not valid");
+
+            }
+
+            if(phoneNumber.value[9]!='-'&&flag!=1)
+
+            {
+
+                flag=1;
+
+                alert("phonenumber not valid");
+
+            }
+
+            var res = phoneNumber.value.substr(1, 3);
+
+            if (!res.match(digits)&&flag!=1)
+
+            {
+
+                flag=1;
+
+                alert("phonenumber not valid");
+
+            }
+
+            var res1 = phoneNumber.value.substr(6, 3);
+
+            if (!res1.match(digits)&&flag!=1)
+
+            {
+
+                flag=1;
+
+                alert("phonenumber not valid");
+
+            }
+
+
+
+            var res2 = phoneNumber.value.substr(10, 4);
+
+            if (!res2.match(digits)&&flag!=1)
+
+            {
+
+                flag=1;
+
+                alert("phonenumber not valid");
+
+            }
+
+        }
+
+        if(flag==0)
+
+        {
+
+            document.formtype.action="confirmation.php";
+
+        }
+
+    }
+
+</script>
 
 </html>
